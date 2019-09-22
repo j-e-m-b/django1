@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'app1/base.html' %}
+    {% load staticfiles %}
+    {% block body_block %}
+
+        <div class="container">
+            <h1>Hola</h1>
+
+            <p>{{ primer_tem }}</p>
+
+            <img src="{% static 'images/my_place_1.jpg' %}" alt="no funko">
+            
+            
+            <div>
+                <h2>Lista de paginas</h2>
+
+                {% if access_records %}
+                <table>
+                    <thead>
+                        <th>Sitio</th>
+                        <th>Fecha</th>
+                    </thead>
+                    <tbody>
+                        {% for data in access_records %}
+                        <tr>
+                            <td>{{ data.name|cut:'and' }}</td>
+                            <td>{{ data.date|date:'d-m-y' }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+
+            </div>
+            
+        </div>
+    {% endblock %}
+    

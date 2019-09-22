@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'app1/base.html' %}
+    {% load staticfiles %}
+    {% block body_block %}
+        <div>
+            <div class="container">
+                <h1>Formulario</h1>
+            
+                <div>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" class="btn btn-primary" value="Enviar">
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    {% endblock %}

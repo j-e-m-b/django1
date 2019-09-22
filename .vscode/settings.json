@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": "/home/eld/anaconda3/envs/django1/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": false,
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django",
+        "disable=no-member",
+    ],
+}
